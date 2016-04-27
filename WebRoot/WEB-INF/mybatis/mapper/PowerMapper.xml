@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.truth.security.mapper.PowerMapper">	
+	
+	<!--  查询单条记录  -->  
+    <select id="getAllPowers" resultMap="allPowersList">  
+       select id,power_name,resource_ids from power
+    </select> 
+    
+    <resultMap type="com.truth.security.model.PowerModel" id="allPowersList" >
+        <id column="id" property="id" />
+        <result property="powerName" column="power_name" />
+        <result property="resourceIds" column="resource_ids" />
+    </resultMap>
+</mapper>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.truth.security.mapper.ResourceMapper">	
+	
+	<!--  查询单条记录  -->  
+    <select id="getAllResources" resultMap="allResourcesList">  
+       select id,resource_name,resource_url from resource
+    </select> 
+    
+    <resultMap type="com.truth.security.model.ResourceModel" id="allResourcesList" >
+        <id column="id" property="id" />
+        <result property="resourceName" column="resource_name" />
+        <result property="resourceUrl" column="resource_url" />
+    </resultMap>
+</mapper>
