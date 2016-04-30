@@ -20,28 +20,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <title> <spring:message code="emmanuel.myAccount.system"/></title>
 
     <!-- Bootstrap core CSS -->
-    <link href="<%=path%>/resource/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Custom styles for this template -->
-    <link href="http://v3.bootcss.com/examples/jumbotron/jumbotron.css" rel="stylesheet">
-
-    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
-    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
-    <script src="http://v3.bootcss.com/assets/js/ie-emulation-modes-warning.js"></script>
-
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-      <script src="//cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-      <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-    
-        <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
     <script src="<%=path%>/resource/js/jquery-1.9.1.js"></script>
+    <link href="<%=path%>/resource/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <script src="<%=path%>/resource/bootstrap/js/bootstrap.min.js"></script>
-    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <script src="http://v3.bootcss.com/assets/js/ie10-viewport-bug-workaround.js"></script>
     <style>
 		body {font-family:'微软雅黑';} 
 		.top-size{ font-size: 17px;}

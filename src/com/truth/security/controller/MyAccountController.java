@@ -62,8 +62,6 @@ public class MyAccountController {
 		//model.addAttribute("currentUser",true);
 		model.addAttribute("currentPage","homePage");
 		model.addAttribute("isLogin",true);
-		String testMessage = EmmanuelResourceBundle.getCurrentLocaleString("emmanuel.myAccount.emmanuel", EmmanuelResourceBundle.BASE_NAME);
-		System.out.println(testMessage);
 		return new ModelAndView(PageUrlDefine.MyAccount.LOGIN_SUCCESS);
 	}
 	
