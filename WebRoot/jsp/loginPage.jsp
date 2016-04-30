@@ -23,7 +23,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 
     <!-- Custom styles for this template -->
     <link href="http://v3.bootcss.com/examples/signin/signin.css" rel="stylesheet">
-	
+    <script src="<%=path%>/resource/js/jquery-1.9.1.js"></script>
+	<script src="<%=path%>/resource/bootstrap/js/bootstrap.min.js"></script>
 	<style>
 		body {
 		  padding-top: 40px;
@@ -77,10 +78,18 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 
       <form class="form-signin" action="<%=path%>/j_spring_security_check" method="post">
         <h2 class="form-signin-heading">请登录</h2>
+        <div class="alert alert-danger alert-dismissible hide" role="alert">
+		  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+		  <strong>Warning!</strong> Better check yourself, you're not looking too good.
+		</div>
  		<div class="form-group">
 	            <input type="text" class="form-control" id="login_name" name='j_username' placeholder="账号" required>
 	    </div>
-         <div class="form-group">
+	    <div class="alert alert-danger alert-dismissible hide" role="alert">
+		  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+		  <strong>Warning!</strong> Better check yourself, you're not looking too good.
+		</div>
+        <div class="form-group">
           <input type="password" class="form-control" id="login_password" name='j_password' placeholder="密码" required>
          </div>
         <div class="checkbox">
