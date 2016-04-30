@@ -15,7 +15,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
     <meta name="description" content="">
     <meta name="author" content="">
-   <link rel="icon" href="<%=path%>/resource/img/favicons/favicon.ico">
+    <link rel="icon" href="<%=path%>/resource/img/favicons/favicon.ico">
 
     <title> <spring:message code="emmanuel.myAccount.system"/></title>
 
@@ -69,9 +69,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
         			<li><a href="#"><spring:message code="emmanuel.myAccount.emmanuel"/></a></li>
         		</c:otherwise>
         	</c:choose>
-            <li><a href="#">标签1</a></li>
-            <li><a href="#">标签2</a></li>
-            <li><a href="#">标签3</a></li>
+            <li><a href="#">个人信息</a></li>
+<!--             <li><a href="#">标签2</a></li> -->
+<!--             <li><a href="#">标签3</a></li> -->
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">下拉菜单 <span class="caret"></span></a>
               <ul class="dropdown-menu">
@@ -86,19 +86,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
             </li>
           </ul>
         <div id="navbar" class="navbar-collapse collapse">
-        <c:choose> 
-        	 <c:when test="${isLogin}">
-        	 	<form class="navbar-form navbar-right" action="<%=path%>/j_spring_security_logout" >
-		     		<button type="submit" class="btn btn-success">退出</button>
-		    	</form>
-         	 </c:when>
-         <c:otherwise>
-         	 <form class="navbar-form navbar-right">
-	            <button type="button" class="btn btn-success" data-toggle="modal" data-target="#loginDivModel" >登录</button>
-	            <button type="button" class="btn btn-success">注册</button>
-	         </form>
-         </c:otherwise>
-         </c:choose>  
+       	 	<form class="navbar-form navbar-right" action="<%=path%>/j_spring_security_logout" >
+	     		<button type="submit" class="btn btn-success">退出</button>
+	    	</form>
         </div><!--/.navbar-collapse -->
       </div>
     </nav>

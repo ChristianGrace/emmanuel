@@ -37,7 +37,7 @@ public class MyAccountController {
 		
 		//在这里写返回到前台页面的信息
 		model.addAttribute("loginErrorMessage", "login failed");
-		return new ModelAndView(PageUrlDefine.MyAccount.LOGIN_SUCCESS);
+		return new ModelAndView(PageUrlDefine.MyAccount.LOGIN_FAILED);
 	}
 	
 	@RequestMapping(value="/testAjax")

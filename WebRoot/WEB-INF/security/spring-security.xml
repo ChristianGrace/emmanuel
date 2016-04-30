@@ -11,7 +11,7 @@
 	<!-- 启用方法控制访问权限  用于直接拦截接口上的方法，拥有权限才能访问此方法-->
 	<global-method-security jsr250-annotations="enabled"/>
 	<!-- 自己写登录页面，并且登陆页面不拦截 -->
-	<http pattern="/jsp/homePage.jsp" security="none" />
+	<http pattern="/jsp/loginPage.jsp" security="none" />
 	<http pattern="/myAccount/failLogin.do" security="none" />
 	
 	
@@ -28,7 +28,7 @@
      	<intercept-url pattern="/**" access="hasRole('ROLE_USER')" requires-channel="any"/>  	
     	
     	<!-- 设置用户默认登录页面 -->
-    	<form-login login-page="/jsp/homePage.jsp" default-target-url="/myAccount/login.do" always-use-default-target="true"/>
+    	<form-login login-page="/jsp/loginPage.jsp" default-target-url="/myAccount/login.do" always-use-default-target="true"/>
     	
     	<logout invalidate-session="true" success-handler-ref="myLogoutSuccessHandler"/> 
     	
