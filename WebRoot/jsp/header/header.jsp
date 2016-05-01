@@ -25,7 +25,10 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <script src="<%=path%>/resource/bootstrap/js/bootstrap.min.js"></script>
     <style>
 		body {font-family:'微软雅黑';} 
-		.top-size{ font-size: 17px;}
+		.top-size{ font-size: 16px;}
+		.jumbotron {
+    	padding-top: 98px;
+	}
 	</style>
 </head>
 
