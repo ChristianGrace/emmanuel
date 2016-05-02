@@ -27,8 +27,14 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		body {font-family:'微软雅黑';} 
 		.top-size{ font-size: 16px;}
 		.jumbotron {
-    	padding-top: 98px;
-	}
+    		padding-top: 98px;
+		}
+		.navbar-fixed-top{
+			position:relative;
+		}
+		.navbar{
+			margin-bottom:0px;
+		}
 	</style>
 </head>
 
@@ -47,14 +53,25 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
         <ul class="nav navbar-nav">
         	<c:choose> 
         		<c:when test="${currentPage eq 'homePage'}">
-        			<li class="active"><a href="#"><spring:message code="emmanuel.myAccount.emmanuel"/></a></li>
+        			<li class="active"><a href="<%=path%>/homePage.do"><spring:message code="emmanuel.myAccount.emmanuel"/></a></li>
         		</c:when>
         		<c:otherwise>
-        			<li><a href="#"><spring:message code="emmanuel.myAccount.emmanuel"/></a></li>
+        			<li><a href="<%=path%>/homePage.do"><spring:message code="emmanuel.myAccount.emmanuel"/></a></li>
         		</c:otherwise>
         	</c:choose>
+        	<sec:authorize access="hasRole('ROLE_ADMIN')">
+	        	<c:choose> 
+	        		<c:when test="${currentPage eq 'authorizationConfig'}">
+	        			 <li  class="active"><a href="<%=path%>/authorizationConfig.do">权限管理</a></li>
+	        		</c:when>
+	        		<c:otherwise>
+	        			<li><a href="<%=path%>/authorizationConfig.do">权限管理</a></li>
+	        		</c:otherwise>
+	        		
+	        	</c:choose>
+        	</sec:authorize>
+           
             <li><a href="#">个人信息</a></li>
-<!--             <li><a href="#">标签2</a></li> -->
 <!--             <li><a href="#">标签3</a></li> -->
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">下拉菜单 <span class="caret"></span></a>
@@ -76,34 +93,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
         </div><!--/.navbar-collapse -->
       </div>
     </nav>
-<!--登陆弹窗 -->
-<div class="modal fade" id="loginDivModel" tabindex="-1" role="dialog" >
-  <div class="modal-dialog" role="document" style="width:20%;">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="exampleModalLabel">登录信息</h4>
-      </div>
-      <form action="<%=path%>/j_spring_security_check" method="post">
-	      <div class="modal-body">
-	        
-	          <div class="form-group">
-	            <label for="recipient-name" class="control-label">账号:</label>
-	            <input type="text" class="form-control" id="login_name" name='j_username'>
-	          </div>
-	          <div class="form-group">
-	            <label for="message-text" class="control-label">密码:</label>
-	           <input type="password" class="form-control" id="login_password" name='j_password'>
-	          </div>
-	       
-	      </div>
-	      <div class="modal-footer">
-	        <button type="submit" class="btn btn-primary">登录</button>
-	        <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
-	      </div>
-       </form>
-    </div>
-  </div>
-</div>
+
  
 </html>
