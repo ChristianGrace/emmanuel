@@ -1,4 +1,5 @@
 <%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
@@ -14,62 +15,73 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	
 		<jsp:include page="/jsp/header/header.jsp" /> 
 		
-		<div class="container">
-		
+		<div class="container" style="padding-top:50px;">
+				
+				<div>
 				<h3>用户组</h3>
 				<table class="table table-bordered table-hover">
 					<thead>
 						<tr>
-							<th>用户id</th>
-							<th>用户名称</th>
-							<th>用户角色</th>
+							<th class="tableId">用户id</th>
+							<th class="tableName">用户名称</th>
+							<th class="tableResource">用户角色</th>
 						</tr>
 					</thead>
 					<tbody>
-						<tr>
-							<td>123</td>
-							<td>admin</td>
-							<td>ROLE_ADMIN</td>
-						</tr>
+						<c:forEach items="${userList}" var="user">
+							<tr>
+								<td>${user.id}</td>
+								<td>${user.logname}</td>
+								<td>${user.role_ids}</td>
+							</tr>
+						</c:forEach>
+						
 					</tbody>
 				</table>
-				
+				</div>
+				<div style="padding-top:10px;">
 				<h3>角色组</h3>
 				<table class="table table-bordered table-hover">
 					<thead>
 						<tr>
-							<th>角色id</th>
-							<th>角色名称</th>
-							<th>角色职能</th>
+							<th class="tableId">角色id</th>
+							<th class="tableName">角色名称</th>
+							<th class="tableResource">角色职能</th>
 						</tr>
 					</thead>
 					<tbody>
-						<tr>
-							<td>123</td>
-							<td>系统管理员</td>
-							<td>查看报表，管理系统</td>
-						</tr>
+						<c:forEach items="${roleList}" var="role">
+							<tr>
+								<td>${role.id}</td>
+								<td>${role.roleType}</td>
+								<td>${role.powerIds}</td>
+							</tr>
+						</c:forEach>
 					</tbody>
 				</table>
-				
+				</div>
+				<div style="padding-top:10px;">
 				<h3>资源组</h3>
 				<table class="table table-bordered table-hover">
 					<thead>
 						<tr>
-							<th>资源id</th>
-							<th>资源名称</th>
-							<th>资源URL</th>
+							<th class="tableId">资源id</th>
+							<th class="tableName">资源名称</th>
+							<th class="tableResource">资源URL</th>
 						</tr>
 					</thead>
 					<tbody>
+					<c:forEach items="${resourceList}" var="resource">
 						<tr>
-							<td>123</td>
-							<td>查看最近收入</td>
-							<td>/jsp/getinput.do</td>
+							<td>${resource.id}</td>
+							<td>${resource.resourceName}</td>
+							<td>${resource.resourceUrl}</td>
 						</tr>
+					</c:forEach>
+						
 					</tbody>
 				</table>
-				
+				</div>
 				
 		</div>
 		

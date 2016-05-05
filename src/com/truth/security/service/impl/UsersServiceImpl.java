@@ -1,5 +1,7 @@
 package com.truth.security.service.impl;
 
+import java.util.List;
+
 import javax.annotation.Resource;
 
 import org.springframework.stereotype.Repository;
@@ -19,6 +21,11 @@ public class UsersServiceImpl implements UsersService {
 	@Override
 	public Users findbyUsername(String name) {
 		return usersDao.findbyUsername(name);
+	}
+
+	@Override
+	public List<Users> getAllUsers() {
+		return usersDao.getAllUsers();
 	}
 
 }

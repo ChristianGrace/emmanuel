@@ -1,6 +1,8 @@
 package com.truth.security.dao.impl;
 
 
+import java.util.List;
+
 import javax.annotation.Resource;
 
 import org.apache.log4j.Logger;
@@ -24,6 +26,11 @@ public class UsersDaoImpl implements UsersDao {
 		final Users users = userMapper.findbyUsername(name);
 
 		return users;
+	}
+
+	@Override
+	public List<Users> getAllUsers() {
+		return userMapper.getAllUsers();
 	}
 
 }

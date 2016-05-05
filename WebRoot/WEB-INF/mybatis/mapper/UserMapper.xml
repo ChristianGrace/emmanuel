@@ -18,4 +18,9 @@
          <result property="password" column="password"/>
          <result property="role_ids" column="role_ids"/>
      </resultMap> 
+     
+     <!--  -->
+     <select id="getAllUsers" resultType="com.truth.security.model.Users">
+     	select id,logname,password,role_ids from user
+     </select>
 </mapper>
